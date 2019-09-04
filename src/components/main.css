@@ -1,0 +1,27 @@
+.scan{
+    /* width: 400px; */
+    width: 95%;
+}
+
+
+
+input{
+    width: 50%;
+}
+
+.buttonCheck{
+    margin: 15px 25px 15px;
+}
+
+.modal-content{
+    padding: 10px 10px 10px;
+}
+
+section{
+    margin: 5px 5px 11px;
+}
+
+.tabs{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
