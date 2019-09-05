@@ -18,9 +18,9 @@ function App() {
     <div >
         <Header/>  
         
-        <div class="tabs is-toggle is-centered">
+        <div className="tabs is-toggle is-centered">
         <ul>
-          <li class="" onClick={e => {setShow(true)}}>
+          <li className="" onClick={e => {setShow(true)}}>
             <a>      
           <span>Scan QR Code</span>
             </a>

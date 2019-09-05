@@ -1,0 +1,14 @@
+{"lang" : "English",
+    "orientation" : "portrait",
+    "display" : "standalone",
+    "name" : "Konfhub QR scanner",
+    "short_name" : "KonfhubQR",
+    "description" : "QR Scanner for participants",
+    "start_url" : "../public/index.html",
+    "icons" : [
+        {
+            "src": "favicon.ico",
+            "sizes": "64x64 32x32 24x24 16x16",
+            "type": "image/x-icon"
+          }
+    ]}

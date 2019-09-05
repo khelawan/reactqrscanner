@@ -24,7 +24,7 @@ class Test extends Component {
   }
 
   componentWillMount(){
-    console.log(this)
+    //console.log(this)
   }
   handleScan = data => {
     if (data) {
@@ -39,11 +39,18 @@ class Test extends Component {
       console.log(scanData);
       localStorage.setItem("scanData",scanData);
       _pdata = localStorage.getItem("scanData");
-      if(_pdata == _pdata.indexOf("Booking Id:")){
+      if(_pdata.indexOf("Booking Id:")>-1){
+        //console.log(_pdata.indexOf("Booking Id"))
         _pdata = _pdata.split("Booking Id:");
+        //console.log(_pdata);
         _pdata = _pdata[1];
         _pdata = _pdata.trim();
-      }  
+        //console.log(_pdata);
+      } 
+      else{
+        //console.log("hello")
+        //console.log(_pdata);
+      } 
     }
   }
   handleError = err => {
@@ -51,6 +58,7 @@ class Test extends Component {
   }
 
   onClickSendData(){
+    console.log(_pdata);
     const that = this;
     
     axios.post('https://xo3dnghur7.execute-api.us-east-2.amazonaws.com/dev/registration_app_user_check_in', {
