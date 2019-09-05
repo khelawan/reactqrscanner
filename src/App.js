@@ -29,7 +29,7 @@ function App() {
       
           <li onClick={e => {setShow(false)}}>
             <a>
-              <span>Scanned Participants</span>
+              <span>Participants List</span>
             </a>
           </li>
         </ul>
