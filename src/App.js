@@ -5,7 +5,7 @@ import './index.css';
 import  '../src/components/main.css'
 import 'bulma/css/bulma.css'
 //import App from './App';
-import * as serviceWorker from './serviceWorker';
+import * as serviceWorker from './sw';
 import Test from '../src/components/qr';
 import Header from '../src/components/header';
 import Search from '../src/components/search';
