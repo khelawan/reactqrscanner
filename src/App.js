@@ -10,6 +10,7 @@ import Test from '../src/components/qr';
 import Header from '../src/components/header';
 import Search from '../src/components/search';
 import List from '../src/components/list';
+import AddParticiant from '../src/components/addparticipant';
 
 
 function App() {
@@ -25,8 +26,6 @@ function App() {
           <span>Scan QR Code</span>
             </a>
           </li>
-        
-      
           <li onClick={e => {setShow(false)}}>
             <a>
               <span>Participants List</span>
@@ -38,9 +37,11 @@ function App() {
         {
             (()=>{
                 if(show){
-                  return <Test />
+                  return( <div><Search/><Test/>
+                    <AddParticiant/>
+                    </div>)
                 }else{
-                  return <List />
+                  return <List/>
                 }
             })()
         }
@@ -50,3 +51,5 @@ function App() {
 }
 
 export default App;
+
+//<div><Search/></div>
