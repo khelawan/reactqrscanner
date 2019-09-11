@@ -1,6 +1,6 @@
 import React from 'react';
 //import ReactDOM from 'react-dom';
-//import 'bulma/css/bulma.css'
+import axios from 'axios' 
 
 
 const style2 = {
@@ -18,6 +18,28 @@ const searchBtn = {
 }
 
 const Search = () => {
+      
+    const jsonData = () => {
+        axios.get('/dummyData.json')
+        .then(function (response) {
+          // handle success
+           console.log(response);
+               
+        })
+        .catch(function (error) {
+          // handle error
+          console.log(error);
+        })
+    }
+
+    jsonData();
+   
+
+
+
+
+
+
     return(
         <div style={divStyle2}>
         <form>

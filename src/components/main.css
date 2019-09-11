@@ -3,18 +3,17 @@
     width: 95%;
 }
 
-
-
 input{
     width: 50%;
 }
 
 .buttonCheck{
-    margin: 15px 25px 15px;
+    margin: 15px 38% 20px;
 }
 
 .modal-content{
-    padding: 10px 10px 10px;
+    padding: 10px 10px 0px;
+    margin :0px !important;
 }
 
 section{
@@ -27,6 +26,8 @@ section{
 }
 
 p{
-    font-size:12px;
-    color:black
+    font-size:14px;
+    color:black;
+    
+    
 }

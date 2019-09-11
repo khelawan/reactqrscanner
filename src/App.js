@@ -1,5 +1,4 @@
 import React, {useState} from 'react';
-import logo from './logo.svg';
 import './App.css';
 import './index.css';
 import  '../src/components/main.css'
@@ -17,8 +16,7 @@ function App() {
   const [show, setShow] = useState(true);
   return (
     <div >
-        <Header/>  
-        
+        <Header/>   
         <div className="tabs is-toggle is-centered">
         <ul>
           <li className="" onClick={e => {setShow(true)}}>

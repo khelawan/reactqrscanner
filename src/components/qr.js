@@ -14,6 +14,17 @@ const modalStyle = {
     borderRadius:'5px'
 }
 
+const styleModalContent = {
+  
+  borderRadius:'5px',
+  marginTop: '30px',
+  
+
+}
+
+
+
+
 class Test extends Component {
     
   constructor(props){
@@ -92,11 +103,16 @@ class Test extends Component {
         <div className="modal-background"></div>
         <div style={modalStyle}>
         <div className="modal-content">
-         <p>{this.state.result}</p>
+        <div style={styleModalContent}>
+        <p>{this.state.result}</p>
+        </div> 
         </div>
-        <a className="button buttonCheck is-success" onClick={() => this.onClickSendData()}>Check-In</a>
-        <a className="button is-danger buttonCheck" onClick={() => this.onClickClose()}>close</a>
+        <div className="columns">
+        <div className="column">
+        <a className="button buttonCheck is-success" onClick={() => this.onClickSendData()}>Check-In</a> 
+         </div>
         </div>
+       </div>
        <button className="modal-close is-large" aria-label="close" onClick={() => this.onClickClose()}></button>
       </div>  
       </div>
