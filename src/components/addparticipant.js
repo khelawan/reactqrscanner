@@ -15,7 +15,8 @@ const inputStyle = {
 }
 
 const heroStyle = {
-    padding: '5px 5px 5px'
+    padding: '5px 5px 5px',
+    borderRadius:'5px'
 }
 
 const AddParticiant =()=>{
@@ -32,7 +33,7 @@ const AddParticiant =()=>{
         <div style={style}>
         
 
-<section class="hero is-primary">
+<section class="hero is-primary radius">
   <div class="" style={heroStyle}>
     <div class="container has-text-centered">
       <h2 class="subtitle">
