@@ -1,22 +1,24 @@
 import React, {useState} from 'react';
+
 import './App.css';
 import './index.css';
 import  '../src/components/main.css'
 import 'bulma/css/bulma.css'
-//import App from './App';
 import * as serviceWorker from './sw';
 import Test from '../src/components/qr';
 import Header from '../src/components/header';
 import Search from '../src/components/search';
 import List from '../src/components/list';
 import AddParticiant from '../src/components/addparticipant';
+import Login from '../src/components/login';
 
 
 function App() {
   const [show, setShow] = useState(true);
   return (
     <div >
-        <Header/>   
+        <Header/>  
+        
         <div className="tabs is-toggle is-centered">
         <ul>
           <li className="" onClick={e => {setShow(true)}}>
@@ -37,6 +39,7 @@ function App() {
                 if(show){
                   return( <div><Search/><Test/>
                     <AddParticiant/>
+                    <Login />
                     </div>)
                 }else{
                   return <List/>

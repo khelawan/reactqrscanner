@@ -19,20 +19,20 @@ const searchBtn = {
 
 const Search = () => {
       
-    const jsonData = () => {
-        axios.get('/dummyData.json')
-        .then(function (response) {
-          // handle success
-           console.log(response);
+    // const jsonData = () => {
+    //     axios.get('/dummyData.json')
+    //     .then(function (response) {
+    //       // handle success
+    //        console.log(response);
                
-        })
-        .catch(function (error) {
-          // handle error
-          console.log(error);
-        })
-    }
+    //     })
+    //     .catch(function (error) {
+    //       // handle error
+    //       console.log(error);
+    //     })
+    // }
 
-    jsonData();
+    // jsonData();
    
 
 

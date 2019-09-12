@@ -1,4 +1,5 @@
 import React from 'react';
+import useForm from 'react-hook-form';
 
 const style = {
     marginBottom:'10px',
@@ -6,41 +7,57 @@ const style = {
     marginRight: '10px'
 }
 
-const formStyle ={
-    display:'block',
+
+
+const inputStyle = {
+    marginTop:'5px',
+    marginBottom:'5px'
 }
 
+const heroStyle = {
+    padding: '5px 5px 5px'
+}
 
 const AddParticiant =()=>{
+
+   
+    const { register, handleSubmit, errors } = useForm(); // initialise the hook
+    const onSubmit = data => {
+      console.log(data);
+    };
+
     
     return(
-                <div>
-                    <div style={style}>
-                    <a className="button is-fullwidth ">Add Particiapnts</a>
-                    </div>
-                   <div className="field " style={formStyle} id='forms' >
-                    <div className="control" style={style}>
-                    <input className="input is-primary" type="text" placeholder="Name" required/>
-                    </div>
-                    <div className="control" style={style}>
-                    <input className="input is-primary" type="text" placeholder="Email-id" required/>
-                    </div>
-                    <div className="control" style={style}>
-                    <input className="input is-primary" type="number" placeholder="Phone" required/>
-                    </div>
-                    <div className="control" style={style}>
-                    <input className="input is-primary" type="text" placeholder="Organisation" required/>
-                    </div>
-                    <a className="button buttonCheck is-success">Add</a>
-                    </div>
-           
-                 </div>
+
+        <div style={style}>
+        
+
+<section class="hero is-primary">
+  <div class="" style={heroStyle}>
+    <div class="container has-text-centered">
+      <h2 class="subtitle">
+        Add Participant
+      </h2>
+    </div>
+  </div>
+</section>
+
+        <form onSubmit={handleSubmit(onSubmit)}>    
+        <input className="input is-primary" name="name" placeholder='Name' ref={register({ required: true })}   style={inputStyle} />
+        {errors.name && 'Name is required.'}  
+        <input className="input is-primary" name="email"  placeholder='Email-id' style={inputStyle} ref={register({ required: true })}  />
+        {errors.email && 'Email-id is required.'}
+        <input className="input is-primary" name="phone"  placeholder='Phone Number' style={inputStyle} ref={register({ pattern: /\d+/ })}  />
+        {errors.phone && 'Phone number is required.'}
+        <input className="input is-primary" name="organisation" placeholder='Organisation' style={inputStyle} ref={register({ required: true })}  />
+        {errors.organisation && 'Please enter organisation.'}
+        <br></br>
+        <button className="button is-primary is-normal" type="submit">add</button>
+      </form>
+      </div>
         
     )
-
-    const showAddparticipant = () =>{
-        
-    }
+   
 }
  
 export default  AddParticiant;

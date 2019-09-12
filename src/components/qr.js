@@ -6,7 +6,7 @@ import 'bulma/css/bulma.css'
 
 let _pdata = "";
 
-let modalClass="modal";
+//let modalClass="modal";
 
 const modalStyle = {
     backgroundColor: 'white',
