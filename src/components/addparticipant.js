@@ -35,7 +35,7 @@ const AddParticiant =()=>{
 
 <section className="hero is-primary radius">
   <div className="" style={heroStyle}>
-    <div class="container has-text-centered">
+    <div className="container has-text-centered">
       <h2 className="subtitle">
         Add Participant
       </h2>

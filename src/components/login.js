@@ -19,11 +19,12 @@ const Login = (props) => {
         Axios.get('https://dstc324xgg.execute-api.us-east-2.amazonaws.com/test/registration_authentication/'+_userId)
         .then(function(response){
             console.log(response);
+            props.history.push('/routele');
         })
         .catch(function (error) {
             // handle error
             console.log(error);
-            props.history.push('/routele');
+           
           })
     }
   
