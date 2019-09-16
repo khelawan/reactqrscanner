@@ -33,16 +33,15 @@ const AddParticiant =()=>{
         <div style={style}>
         
 
-<section class="hero is-primary radius">
-  <div class="" style={heroStyle}>
+<section className="hero is-primary radius">
+  <div className="" style={heroStyle}>
     <div class="container has-text-centered">
-      <h2 class="subtitle">
+      <h2 className="subtitle">
         Add Participant
       </h2>
     </div>
   </div>
 </section>
-
         <form onSubmit={handleSubmit(onSubmit)}>    
         <input className="input is-primary" name="name" placeholder='Name' ref={register({ required: true })}   style={inputStyle} />
         {errors.name && 'Name is required.'}  
@@ -53,7 +52,9 @@ const AddParticiant =()=>{
         <input className="input is-primary" name="organisation" placeholder='Organisation' style={inputStyle} ref={register({ required: true })}  />
         {errors.organisation && 'Please enter organisation.'}
         <br></br>
-        <button className="button is-primary is-normal" type="submit">add</button>
+        <div className="has-text-centered">
+        <button className="button is-primary is-normal radiusBtn" type="submit">  Add  </button>
+        </div>
       </form>
       </div>
         
