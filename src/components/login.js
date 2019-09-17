@@ -1,5 +1,5 @@
 import React,{useState} from 'react';
-import Axios from 'axios';
+import axios from 'axios' 
 import imgkonfhub from '../components/images/512.png';
 
 
@@ -11,12 +11,11 @@ const style = {
 
 const Login = (props) => {
     const [_userId, setUserId] = useState("");
-    //console.log(_userId)
+    
     const handleSubmit = e => {
-
-        e.preventDefault();
+        
         localStorage.setItem('eventId', _userId);
-        Axios.get('https://dstc324xgg.execute-api.us-east-2.amazonaws.com/test/registration_authentication/'+_userId)
+        axios.get('https://dstc324xgg.execute-api.us-east-2.amazonaws.com/test/registration_authentication/'+_userId)
         .then(function(response){
             console.log(response);
             props.history.push('/routele');
@@ -26,24 +25,25 @@ const Login = (props) => {
             console.log(error);
            
           })
+          e.preventDefault();
     }
   
     return (
         <div>
-       <div className="bodyLogin">
+         <div className="bodyLogin">
         <div className="has-text-centered ">
-        <img  src={imgkonfhub}  height="62" width="62"/>
+        <img className='top' src={imgkonfhub}  height="62" width="62"/>
         </div>
 
                             <form onSubmit={handleSubmit}>
                                 <div className="field">  
-                                <div style={style}> 
+                                <div style={style} className='top2'> 
                                     <input className="input" id="userId" name="userId" placeholder="Event Id" value={_userId} onChange={e => {setUserId(e.target.value)}} />
                                  </div>
                                 </div>
                                 <div className="field">
-                                <div className="has-text-centered">
-                                    <button type="submit" className="button is-primary is-normal radiusBtn">Check</button>
+                                <div className="has-text-centered ">
+                                    <button type="submit" className="button is-primary is-normal radiusBtn top3">Check</button>
                                  </div>
                                 </div>
                              </form>
