@@ -47,7 +47,7 @@ const List = () =>{
         {
             participants.map(e => {
                 return(
-                    <a className="list-item">
+             <a className="list-item">
              <p>Name:{e.name}</p><p>Email-id:{e.email_id}</p>
              <p>Organisation:{e.organisation}</p>
              <p>Checkin Time:{e.check_in_time}</p>

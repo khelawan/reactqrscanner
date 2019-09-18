@@ -56,4 +56,11 @@ p{
 .top3{
     margin-bottom: 50%;
 }
+.title{
+        margin-bottom: 0px !important;      
+}
 
+.title1{
+font-size: 23px !important;
+color:darkslategrey;
+}
