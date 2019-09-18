@@ -18,6 +18,9 @@ const Login = (props) => {
         axios.get('https://dstc324xgg.execute-api.us-east-2.amazonaws.com/test/registration_authentication/'+_userId)
         .then(function(response){
             console.log(response);
+
+            let event_details = JSON.stringify(response.data);
+            localStorage.setItem('event_details',event_details);
             props.history.push('/routele');
         })
         .catch(function (error) {

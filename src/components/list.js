@@ -19,9 +19,12 @@ const List = () =>{
     const [participants, pdata] = useState([]);
     const [_getData, setGetData] = useState(true);
 
+    let hosted_event_id = localStorage.getItem('event_details');
+    console.log(hosted_event_id.hosted_event_id);
+
     const getData = () => {
         if(!_getData)return;
-        axios.get('https://xo3dnghur7.execute-api.us-east-2.amazonaws.com/dev/registration_app_get_check_in_details?event_id=testkonfhub-riderb8dee6bd')
+        axios.get('https://xo3dnghur7.execute-api.us-east-2.amazonaws.com/dev/registration_app_get_check_in_details?event_id=gdgdevfestnagpur2019e0b747f8')
         .then(function (response) {
           // handle success
            pdata(response.data);

@@ -17,12 +17,17 @@ const searchBtn = {
   // width:'100px'
 }
 
-//let searchData = [{"name": "Srushith", "email_id": "srushith.codeops@gmail.com", "designation": "CodeOps Tech", "organisation": "CodeOps Tech", "phone_number": "8686519259"}, {"name": "Srushith", "email_id": "srushith.codeops@gmail.com", "designation": "CodeOps Tech", "organisation": "CodeOps Tech", "phone_number": "08686519259"}, {"name": "Srushith", "email_id": "srushi007@gmail.com", "designation": "Dev", "organisation": "CodeOps", "phone_number": "08686519259"}, {"name": "Srushith", "email_id": "parikannappan@gmail.com", "designation": "HOE", "organisation": "Codeops", "phone_number": "09986432541"}, {"name": "Srushith", "email_id": "parikannappan@gmail.com", "designation": "Architect", "organisation": "HCL", "phone_number": "09986432541"}]
+const styleModal = {
+    margin: '0px',
+    backgroundColor :'white'
+}
+
 
 const Search = () => {
       
     const [_search, setSearchId] = useState("");
-    
+
+    const [ _searchList , _searchListOn] = useState("modal")
 
     const handleSubmit = e => {
 
@@ -30,8 +35,11 @@ const Search = () => {
         axios.get('https://dstc324xgg.execute-api.us-east-2.amazonaws.com/test/search_participants_details/'+_search)
         .then(function (response) {
           // handle success
-           console.log(response);
-               
+           //console.log(response); 
+           let seachData = response.data;
+           console.log(seachData);
+          _searchListOn("modal is-active");
+            
         })
         .catch(function (error) {
           // handle error
@@ -46,6 +54,27 @@ const Search = () => {
         <input style={style2}  className="input is-rounded search-box" type="text" id="search" placeholder="Type the Booking Id" value={_search} onChange={e => {setSearchId(e.target.value)}} />
         <button  type="submit" style={searchBtn} className="button is-primary is-rounded">Search</button>
         </form>
+               <div>
+               <div className={_searchList} >
+               <div className="modal-background"></div>
+               <div className="modal-card">
+               <header className="modal-card-head">
+                <p className="modal-card-title">List of Participants</p>
+                <button className="delete" aria-label="close"  onClick={() =>{_searchListOn("modal")}}></button>
+               </header>
+               <section className="modal-card-body" style={styleModal}>
+               const listItems = seachData.map((data) =>
+                <h3>data.name</h3>
+                <h4>khelawan@codeops.tech</h4>
+                <h4>CodeOps Technologies LLP</h4>
+               </section>
+              <footer className="modal-card-foot">
+                <button className="button is-success">Check-In</button>
+                <button className="button" onClick={() =>{_searchListOn("modal")}}>Cancel</button>
+              </footer>
+              </div>
+              </div>
+              </div>
         </div>
     )}
 
