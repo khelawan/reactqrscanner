@@ -45,7 +45,7 @@ const Search = () => {
                 console.log(seachData);
                 _searchListOn("modal is-active");
             }   
-            
+   
         })
         .catch(function (error) {
           // handle error
@@ -69,7 +69,7 @@ const Search = () => {
                 <button className="delete" aria-label="close"  onClick={() =>{_searchListOn("modal")}}></button>
                </header>
                <section className="modal-card-body" style={styleModal}>
-               const listItems = seachData.map((data) =>
+              
                 <h3>hello</h3>
                 <h4>khelawan@codeops.tech</h4>
                 <h4>CodeOps Technologies LLP</h4>
@@ -85,3 +85,10 @@ const Search = () => {
     )}
 
     export default Search;
+
+    // const listItems = seachData.map((number) =>
+    // <li key={number.toString()}>
+    //   {number}
+    // </li>
+                                
+    //  );

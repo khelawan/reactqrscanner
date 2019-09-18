@@ -17,7 +17,7 @@ const Login = (props) => {
         localStorage.setItem('eventId', _userId);
         axios.get('https://dstc324xgg.execute-api.us-east-2.amazonaws.com/test/registration_authentication/'+_userId)
         .then(function(response){
-            console.log(response);
+            console.log(response.data.hosetd_event_id);
 
             if(response.data == 400){
                 window.alert("Event Doesnot Exist");
@@ -25,6 +25,7 @@ const Login = (props) => {
             else{
                 let event_details = JSON.stringify(response.data);
                 localStorage.setItem('event_details',event_details);
+                localStorage.setItem('hosted_event_id',response.data.hosetd_event_id)
                 props.history.push('/routele');
             }
 
@@ -44,7 +45,6 @@ const Login = (props) => {
         <div className="has-text-centered ">
         <img className='top' src={imgkonfhub}  height="62" width="62"/>
         </div>
-
                             <form onSubmit={handleSubmit}>
                                 <div className="field">  
                                 <div style={style} className='top2'> 

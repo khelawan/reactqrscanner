@@ -11,19 +11,16 @@ let _pdata = "";
 const modalStyle = {
     backgroundColor: 'white',
     zIndex: 1,
-    borderRadius:'5px'
+    borderRadius:'5px',
+    minWidth:'100%'
 }
 
 const styleModalContent = {
-  
+
   borderRadius:'5px',
-  marginTop: '30px',
-  
+  marginTop: '30px'  
 
 }
-
-
-
 
 class Test extends Component {
     
@@ -76,12 +73,26 @@ class Test extends Component {
             "booking_id": _pdata   
       })
       .then(function (response) {
-        console.log(response);
-        localStorage.clear();
-        that.setState({
+        
+        if(response.data == 400){
+          that.setState({
             modalClass : "modal"
-        })
-        console.log(that.state)
+          })
+          window.alert("Invalid QR Code")
+        }
+        else{
+
+          console.log(response);
+          localStorage.clear();
+          that.setState({
+            modalClass : "modal"
+          })
+          console.log(that.state)
+
+        }
+
+
+        
       })
       .catch(function (error) {
         console.log(error);
