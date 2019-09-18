@@ -84,6 +84,7 @@ class Test extends Component {
 
           console.log(response);
           localStorage.clear();
+          window.alert("Particiapnt Checked-in")
           that.setState({
             modalClass : "modal"
           })

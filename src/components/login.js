@@ -50,7 +50,7 @@ const Login = (props) => {
         </div>
         <div className="field">
         <div className="has-text-centered ">
-            <button type="submit" className="button is-primary is-normal radiusBtn top3">Check</button>
+            <button type="submit" className="button is-primary is-normal radiusBtn top3">Login</button>
          </div>
         </div>
         </form>              
