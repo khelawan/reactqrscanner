@@ -16,22 +16,26 @@ const style = {
 }
 
 const List = () =>{
-    const [participants, pdata] = useState(['Lodaing..']);
+    const [participants, pdata] = useState([]);
     const [_getData, setGetData] = useState(true);
+
+    const hosted_event_id = localStorage.getItem("hosted_event_id");
 
     const getData = () => {
         if(!_getData)return;
-        axios.get('https://xo3dnghur7.execute-api.us-east-2.amazonaws.com/dev/registration_app_get_check_in_details?event_id=testkonfhub-riderb8dee6bd')
+        axios.get('https://xo3dnghur7.execute-api.us-east-2.amazonaws.com/dev/registration_app_get_check_in_details?event_id='+hosted_event_id)
         .then(function (response) {
-          // handle success
+            setGetData(false) 
            pdata(response.data);
            console.log(response);
            _list = participants;
-           //console.log(_list);
+           if(response.data == ''){
+               window.alert("No participant checked-in");
+           }
            setGetData(false)        
         })
         .catch(function (error) {
-          // handle error
+          
           setGetData(false)  
           console.log(error);
         })
