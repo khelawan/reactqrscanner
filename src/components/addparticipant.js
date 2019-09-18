@@ -37,11 +37,9 @@ const AddParticiant =()=>{
         window.location.reload(true);
        
       })
-      .catch(function (error) {
-       
+      .catch(function (error) {   
         console.log(error);
         window.alert("Oops! participant Couldnot be added");
-       
       });
     };
     return(

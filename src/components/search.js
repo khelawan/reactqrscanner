@@ -54,6 +54,8 @@ const Search = () => {
         e.preventDefault();
     }
 
+   
+
     return(
         <div style={divStyle2}>
         <form onSubmit={handleSubmit}>
@@ -69,7 +71,6 @@ const Search = () => {
                 <button className="delete" aria-label="close"  onClick={() =>{_searchListOn("modal")}}></button>
                </header>
                <section className="modal-card-body" style={styleModal}>
-              
                 <h3>hello</h3>
                 <h4>khelawan@codeops.tech</h4>
                 <h4>CodeOps Technologies LLP</h4>
@@ -82,7 +83,10 @@ const Search = () => {
               </div>
               </div>
         </div>
-    )}
+    )
+   
+
+}
 
     export default Search;
 

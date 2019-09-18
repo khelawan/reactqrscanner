@@ -70,7 +70,7 @@ class Test extends Component {
     const that = this;
     
     axios.post('https://xo3dnghur7.execute-api.us-east-2.amazonaws.com/dev/registration_app_user_check_in', {
-            "booking_id": _pdata   
+            "booking_id": _pdata,"hosted_event_id":localStorage.getItem("hosted_event_id")   
       })
       .then(function (response) {
         
@@ -83,17 +83,14 @@ class Test extends Component {
         else{
 
           console.log(response);
-          localStorage.clear();
+          
           window.alert("Particiapnt Checked-in")
           that.setState({
             modalClass : "modal"
           })
-          console.log(that.state)
+         // console.log(that.state)
 
-        }
-
-
-        
+        }      
       })
       .catch(function (error) {
         console.log(error);
