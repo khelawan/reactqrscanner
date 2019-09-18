@@ -36,9 +36,15 @@ const Search = () => {
         .then(function (response) {
           // handle success
            //console.log(response); 
-           let seachData = response.data;
-           console.log(seachData);
-          _searchListOn("modal is-active");
+          
+          if(response.data == 400){
+              window.alert("No Data Found");
+            }
+            else{
+                let seachData = response.data;
+                console.log(seachData);
+                _searchListOn("modal is-active");
+            }   
             
         })
         .catch(function (error) {
@@ -64,7 +70,7 @@ const Search = () => {
                </header>
                <section className="modal-card-body" style={styleModal}>
                const listItems = seachData.map((data) =>
-                <h3>data.name</h3>
+                <h3>hello</h3>
                 <h4>khelawan@codeops.tech</h4>
                 <h4>CodeOps Technologies LLP</h4>
                </section>

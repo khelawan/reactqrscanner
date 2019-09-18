@@ -19,9 +19,16 @@ const Login = (props) => {
         .then(function(response){
             console.log(response);
 
-            let event_details = JSON.stringify(response.data);
-            localStorage.setItem('event_details',event_details);
-            props.history.push('/routele');
+            if(response.data == 400){
+                window.alert("Event Doesnot Exist");
+            }
+            else{
+                let event_details = JSON.stringify(response.data);
+                localStorage.setItem('event_details',event_details);
+                props.history.push('/routele');
+            }
+
+            
         })
         .catch(function (error) {
             // handle error
