@@ -9,6 +9,13 @@ import AddParticiant from './addparticipant';
 
 
 function Routele() {
+
+    //  if(localStorage.getItem("eventId") != null || localStorage.getItem("eventId") != undefined || localStorage.getItem("eventId") != "") {
+    //     props.history.push('/routele');
+    // }
+
+
+
     const [show, setShow] = useState(true);
     let event_name = localStorage.getItem("event_details");
     event_name = JSON.parse(event_name);

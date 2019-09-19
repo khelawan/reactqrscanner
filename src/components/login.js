@@ -10,6 +10,12 @@ const style = {
 }
 
 const Login = (props) => {
+ 
+
+    // if(localStorage.getItem("eventId") != null || localStorage.getItem("eventId") != undefined || localStorage.getItem("eventId") != "") {
+    //     props.history.push('/routele');
+    // }
+
     const [_userId, setUserId] = useState("");
     
     const handleSubmit = e => {

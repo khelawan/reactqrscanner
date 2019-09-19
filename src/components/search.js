@@ -24,7 +24,8 @@ const styleModal = {
 
 
 const Search = () => {
-      
+    
+    let searchData = [];
     const [_search, setSearchId] = useState("");
 
     const [ _searchList , _searchListOn] = useState("modal")
@@ -41,9 +42,10 @@ const Search = () => {
               window.alert("No Data Found");
             }
             else{
-                let seachData = response.data;
-                console.log(seachData);
+                 searchData = response.data;
+                console.log(searchData);
                 _searchListOn("modal is-active");
+                
             }   
    
         })
@@ -54,45 +56,45 @@ const Search = () => {
         e.preventDefault();
     }
 
-   
-
     return(
         <div style={divStyle2}>
         <form onSubmit={handleSubmit}>
         <input style={style2}  className="input is-rounded search-box" type="text" id="search" placeholder="Type the Booking Id" value={_search} onChange={e => {setSearchId(e.target.value)}} />
         <button  type="submit" style={searchBtn} className="button is-primary is-rounded">Search</button>
         </form>
-               <div>
-               <div className={_searchList} >
-               <div className="modal-background"></div>
-               <div className="modal-card">
-               <header className="modal-card-head">
-                <p className="modal-card-title">List of Participants</p>
-                <button className="delete" aria-label="close"  onClick={() =>{_searchListOn("modal")}}></button>
-               </header>
-               <section className="modal-card-body" style={styleModal}>
-                <h3>hello</h3>
-                <h4>khelawan@codeops.tech</h4>
-                <h4>CodeOps Technologies LLP</h4>
-               </section>
-              <footer className="modal-card-foot">
-                <button className="button is-success">Check-In</button>
-                <button className="button" onClick={() =>{_searchListOn("modal")}}>Cancel</button>
-              </footer>
-              </div>
-              </div>
-              </div>
-        </div>
+
+        <div className={_searchList} >
+        <div className="modal-background"></div>
+        <div className="modal-card">
+        <header className="modal-card-head">
+         <p className="modal-card-title">List of Participants</p>
+         <button className="delete" aria-label="close"  onClick={() =>{_searchListOn("modal")}}></button>
+        </header>
+        <section className="modal-card-body" style={styleModal}>
+          
+          
+         <h3>hello</h3>
+         <h4>khelawan@codeops.tech</h4>
+         <h4>CodeOps Technologies LLP</h4>
+        </section>
+       <footer className="modal-card-foot">
+         <button className="button is-success">Check-In</button>
+         <button className="button" onClick={() =>{_searchListOn("modal")}}>Cancel</button>
+       </footer>
+       </div>
+       </div>
+       </div>
     )
+  
    
 
 }
 
     export default Search;
 
-    // const listItems = seachData.map((number) =>
-    // <li key={number.toString()}>
-    //   {number}
-    // </li>
-                                
-    //  );
+    // {
+    //     searchData.map((e)=>
+    //        <p>e.names</p>
+        
+    //     )
+    // }
