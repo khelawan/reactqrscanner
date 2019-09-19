@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios' 
 import useForm from 'react-hook-form';
+import Header from './header';
 
 const style = {
     marginBottom:'10px',
@@ -42,8 +43,7 @@ const AddParticiant =()=>{
     };
     return(
         <div style={style}>
-        
-
+        <Header/>
 <section className="hero is-primary radius">
   <div className="" style={heroStyle}>
     <div className="container has-text-centered">

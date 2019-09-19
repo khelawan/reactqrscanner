@@ -5,24 +5,22 @@ import '../components/main.css'
 
 
 const footerbg ={
-    backgroundColor:'teal',
+    backgroundColor:'#209cee',
     padding:'1rem 1.5rem 1rem'
 }
 
-const Footer = () => {
+const Footer = (props) => {
 return(
     <footer className="footer" style={footerbg}>
     <div className="columns is-mobile">
     <div className="column is-vcentered">
-    <label className="label islabel">Total Checked-In</label>
+    <label className="label islabel">Total Checked-In:999</label>
     </div>
    
-    <div className="column">
-    <button className="button is-success is-inverted radiusBtn" >Add Participant</button>
+    <div className="column has-text-centered ">
+    <button className="button is-success is-inverted  radiusBtn" onClick={e=>{props.props.history.push("/AddParticiant")}} >Add Participant</button>
     </div>
   </div>
-    <div className="content">   
-    </div>
     </footer>
 )
 };
