@@ -64,3 +64,6 @@ p{
 font-size: 23px !important;
 color:darkslategrey;
 }
+.float-left{
+    float: right;
+}

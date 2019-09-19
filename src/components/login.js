@@ -14,6 +14,7 @@ const Login = (props) => {
 
     // if(localStorage.getItem("eventId") != null || localStorage.getItem("eventId") != undefined || localStorage.getItem("eventId") != "") {
     //     props.history.push('/routele');
+    //     console.log("Routing to scan page")
     // }
 
     const [_userId, setUserId] = useState("");
