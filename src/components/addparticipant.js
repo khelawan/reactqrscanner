@@ -26,8 +26,6 @@ const AddParticiant =()=>{
       let _pdataSend = data;
       console.log(_pdataSend);
        _pdataSend.hosted_event_id = localStorage.getItem("hosted_event_id");
-       _pdataSend.designation = 'dev';
-      
       console.log(_pdataSend);
      
       axios.post('https://dstc324xgg.execute-api.us-east-2.amazonaws.com/test/add_participants_on_spot',_pdataSend)

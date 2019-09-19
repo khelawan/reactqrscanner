@@ -14,24 +14,29 @@ const Header = () => {
                     <div className="navbar-brand">
                         <a className="navbar-item" href="#">
                         <img style={imgStyle} src="https://firebasestorage.googleapis.com/v0/b/konfhub.appspot.com/o/'%2Fconference-photos%2F'logo2.png?alt=media&token=f8323ab6-d1f2-41cd-9cc9-dad39aeeefa6" width="112" height="28"></img>
-                        </a>
-                        
-                        <div class="navbar-item">
-                          <div class="field is-grouped">
+                        </a> 
+                        <div className="">
+                        <div className="navbar-end">
+                        <div className="navbar-item ">
+                          <div className="field is-grouped navbar-end">
                            
-                            <p class="control">
-                              <a class="button is-primary float-left" href="https://github.com/jgthms/bulma/releases/download/0.7.5/bulma-0.7.5.zip">
+                            <p className="control ">
+                              <a className="button is-primary" href="/login">
                                 <span>Logout</span>
                               </a>
                             </p>
                           </div>
                         </div>
+                        </div>
+                        </div>
+                        
                      
                     </div>
                    
 
                     
                    </nav>
+                  
         </div>
 
     );

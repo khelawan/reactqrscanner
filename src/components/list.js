@@ -29,21 +29,24 @@ const List = () =>{
            pdata(response.data);
            console.log(response);
            _list = participants;
+           console.log(response.data.length);
            if(response.data == ''){
                window.alert("No participant checked-in");
            }
            setGetData(false)        
         })
         .catch(function (error) {
-          
           setGetData(false)  
           console.log(error);
         })
     }
     getData();
+
+
+           
     return(
+    
         <div className="list is-hoverable">
-        
         <input style={style}  className="input is-rounded search-box" type="text" placeholder="Start typing name to search" onChange={e => {pdata(_list.filter(v => {
             return v.name.toLowerCase().indexOf(e.target.value.toLowerCase()) > -1
        }))
@@ -62,22 +65,31 @@ const List = () =>{
        </div>
     )
 }
-const ShowList = (props) => {
-    const [_data, setData] = useState(props.participants)
-    if(_data.length){
-        _data.map(e => {
-            return(
-             <a className="list-item">
-             <p>Name:{e.name}</p><p>Email-id:{e.email_id}</p>
-             <p>Organisation:{e.organisation}</p>
-             </a>
-            )
-         })
-    }
-    else{
-        return(<div></div>)
-    }
-}
+// const ShowList = (props) => {
+//     const [_data, setData] = useState(props.participants)
+   
+//     if(_data.length){
+//         return(
+//             <div>
+//             <p></p>
+            
+//             {_data.map(e => {
+//                 return(
+//                  <a className="list-item">
+//                  <p>Name:{e.name}</p><p>Email-id:{e.email_id}</p>
+//                  <p>Organisation:{e.organisation}</p>
+//                  </a>
+//                 )
+//              })}
+//             </div>
+            
+//         )
+       
+//     }
+//     else{
+//         return(<div><a>No Checked-in participants</a></div>)
+//     }
+// }
 
 
 export default List

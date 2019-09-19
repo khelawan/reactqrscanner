@@ -5,7 +5,8 @@ import Header from './header';
 import Search from './search';
 import List from './list';
 import AddParticiant from './addparticipant';
-//import Login from './login';
+import Footer from './footer';
+
 
 
 function Routele() {
@@ -45,8 +46,7 @@ function Routele() {
               (()=>{
                   if(show){
                     return( <div><Search/><Test/>
-                      <AddParticiant/>
-                      
+                      <AddParticiant/> 
                       </div>)
                   }else{
                     return <List/>
@@ -54,6 +54,7 @@ function Routele() {
               })()
           }
           </div>
+          <Footer />
       </div>
     
     );

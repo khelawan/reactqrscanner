@@ -64,6 +64,13 @@ p{
 font-size: 23px !important;
 color:darkslategrey;
 }
-.float-left{
-    float: right;
+
+
+.footer-bg-color{
+    background-color: teal;
+}
+
+
+.islabel{
+    margin-top: 15px;
 }
