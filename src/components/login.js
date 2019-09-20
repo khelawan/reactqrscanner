@@ -6,9 +6,13 @@ import imgkonfhub from '../components/images/512.png';
 const style = {
     marginBottom:'10px',
     marginLeft: '10px',
-    marginRight: '10px'
+    marginRight: '10px',
+    borderRadius:'34px'
 }
 
+const style2 = {
+    borderRadius:'20px',
+}
 
 
 const Login = (props) => {
@@ -54,7 +58,7 @@ const Login = (props) => {
         <form onSubmit={handleSubmit}>
         <div className="field">  
         <div style={style} className='top2'> 
-            <input className="input" id="userId" name="userId" placeholder="Event Id" value={_userId} onChange={e => {setUserId(e.target.value)}} />
+            <input className="input" style={style2} id="userId" name="userId" placeholder="Event Id" value={_userId} onChange={e => {setUserId(e.target.value)}} />
          </div>
         </div>
         <div className="field">
