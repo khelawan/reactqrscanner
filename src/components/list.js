@@ -14,6 +14,10 @@ const style = {
     marginBottom:'10px',
     boxShadow: '0px 0px 6px'
 }
+const bold = {
+    fontSize:'18px',
+
+}
 
 const List = () =>{
     const [participants, pdata] = useState([]);
@@ -49,15 +53,16 @@ const List = () =>{
         <div className="list is-hoverable">
         <input style={style}  className="input is-rounded search-box" type="text" placeholder="Start typing name to search" onChange={e => {pdata(_list.filter(v => {
             return v.name.toLowerCase().indexOf(e.target.value.toLowerCase()) > -1
-       }))
-   }} /> 
-        {
+            }))
+            }} /> 
+             {
             participants.map(e => {
                 return(
              <a className="list-item">
-             <p>Name:{e.name}</p><p>Email-id:{e.email_id}</p>
-             <p>Organisation:{e.organisation}</p>
-             <p>Checkin Time:{e.check_in_time}</p>
+             <p>Name:<span style={bold} className='is-capitalized'> {e.name}</span></p>
+             <p>Email-id: {e.email_id}</p>
+             <p>Organisation: {e.organisation}</p>
+             <p>Checkin Time: {e.check_in_time}</p>
              </a>
                 )
             })

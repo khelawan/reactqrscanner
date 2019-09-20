@@ -80,10 +80,11 @@ class Test extends Component {
           })
           window.alert("Invalid QR Code")
         }
+        else if (response.data == 409){
+          window.alert("Participant already checked-in")
+        }
         else{
-
           console.log(response);
-          
           window.alert("Particiapnt Checked-in")
           that.setState({
             modalClass : "modal"

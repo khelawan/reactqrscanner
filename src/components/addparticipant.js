@@ -3,11 +3,7 @@ import axios from 'axios'
 import useForm from 'react-hook-form';
 import Header from './header';
 
-const style = {
-    marginBottom:'10px',
-    marginLeft: '10px',
-    marginRight: '10px'
-}
+
 const inputStyle = {
     marginTop:'5px',
     marginBottom:'5px'
@@ -18,9 +14,7 @@ const heroStyle = {
     borderRadius:'5px'
 }
 
-const AddParticiant =()=>{
-
-   
+const AddParticiant =()=>{   
     const { register, handleSubmit, errors } = useForm(); // initialise the hook
     const onSubmit = data => {
       console.log(data);
@@ -42,17 +36,17 @@ const AddParticiant =()=>{
       });
     };
     return(
-        <div style={style}>
+        <div >
         <Header/>
-<section className="hero is-primary radius">
+<div className="hero is-primary radius">
   <div className="" style={heroStyle}>
     <div className="container has-text-centered">
       <h2 className="subtitle">
-        Add Participant
+        On Spot Registration
       </h2>
     </div>
   </div>
-</section>
+</div>
         <form onSubmit={handleSubmit(onSubmit)}>    
         <input className="input is-primary" name="name" placeholder='Name' ref={register({ required: true })}   style={inputStyle} />
         {errors.name && 'Name is required.'}  
@@ -65,13 +59,11 @@ const AddParticiant =()=>{
         <br></br>
         <div className="has-text-centered">
         <button className="button is-primary is-normal radiusBtn" type="submit">  Add Participant </button>
-        <a className="button is-primary is-normal radiusBtn" href="/routele"> Back</a>
+        <a className="button is-warning is-normal radiusBtn" href="/routele"> Back</a>
         </div>
       </form>
-      </div>
-        
-    )
-   
+      </div>    
+    ) 
 }
  
 export default  AddParticiant;

@@ -58,7 +58,7 @@ const Login = (props) => {
         <form onSubmit={handleSubmit}>
         <div className="field">  
         <div style={style} className='top2'> 
-            <input className="input" style={style2} id="userId" name="userId" placeholder="Event Id" value={_userId} onChange={e => {setUserId(e.target.value)}} />
+            <input className="input" style={style2} id="userId" name="userId" placeholder="Event Id" value={_userId} onChange={e => {setUserId(e.target.value)}} required />
          </div>
         </div>
         <div className="field">

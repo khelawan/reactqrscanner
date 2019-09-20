@@ -18,7 +18,7 @@ function Routele(props) {
     //  if(localStorage.getItem("eventId") != null || localStorage.getItem("eventId") != undefined || localStorage.getItem("eventId") != "") {
     //     props.history.push('/routele');
     // }
-    console.log(props);
+    //console.log(props);
 
     const [show, setShow] = useState(true);
     let event_name = localStorage.getItem("event_details");
