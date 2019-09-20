@@ -5,13 +5,19 @@ import Header from './header';
 
 
 const inputStyle = {
-    marginTop:'5px',
-    marginBottom:'5px'
+    marginTop:'10px',
+    marginBottom:'5px',
+    borderRadius: '27px'
 }
 
 const heroStyle = {
     padding: '5px 5px 5px',
-    borderRadius:'5px'
+    borderRadius:'5px',
+   
+}
+
+const hero ={
+  marginBottom:'20px'
 }
 
 const AddParticiant =()=>{   
@@ -38,7 +44,7 @@ const AddParticiant =()=>{
     return(
         <div >
         <Header/>
-<div className="hero is-primary radius">
+<div className="hero is-primary radius" style={hero}>
   <div className="" style={heroStyle}>
     <div className="container has-text-centered">
       <h2 className="subtitle">
@@ -58,7 +64,7 @@ const AddParticiant =()=>{
         {errors.organisation && 'Please enter organisation.'}
         <br></br>
         <div className="has-text-centered">
-        <button className="button is-primary is-normal radiusBtn" type="submit">  Add Participant </button>
+        <button className="button is-primary is-normal radiusBtn" type="submit">  Register </button>
         <a className="button is-warning is-normal radiusBtn" href="/routele"> Back</a>
         </div>
       </form>

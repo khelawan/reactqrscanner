@@ -38,9 +38,14 @@ const Search = props => {
         }
       )
       .then(function(response) {
+        console.log(response);
         if (response.data == 400) {
           window.alert("Invalid QR Code");
-        } else {
+        } 
+        else if(response.data == 409){
+           window.alert("Participant already checked-in")
+        }
+        else {
           _searchListOn("modal");
           window.alert("Partipant checked-in")
         }
@@ -125,7 +130,7 @@ const Search = props => {
                             checkInData(e.booking_id);
                           }}
                         >
-                          <p>Name: {e.name}</p>
+                          <p className='is-capitalized'>Name: {e.name}</p>
                           <p>Email-id: {e.email_id}</p>
                           <p>Booking-id: {e.booking_id}</p>
                         </a>
@@ -141,7 +146,7 @@ const Search = props => {
           <footer className="modal-card-foot">
             
             <button
-              className="button"
+              className="button is-danger radiusBtn"
               onClick={() => {
                 _searchListOn("modal");
               }}

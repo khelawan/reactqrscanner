@@ -35,6 +35,7 @@ const List = () =>{
            console.log(response);
            _list = participants;
            console.log(response.data.length);
+           localStorage.setItem('checkinLength', response.data.length);
            if(response.data == ''){
                window.alert("No participant checked-in");
            }
@@ -68,31 +69,5 @@ const List = () =>{
        </div>
     )
 }
-// const ShowList = (props) => {
-//     const [_data, setData] = useState(props.participants)
-   
-//     if(_data.length){
-//         return(
-//             <div>
-//             <p></p>
-            
-//             {_data.map(e => {
-//                 return(
-//                  <a className="list-item">
-//                  <p>Name:{e.name}</p><p>Email-id:{e.email_id}</p>
-//                  <p>Organisation:{e.organisation}</p>
-//                  </a>
-//                 )
-//              })}
-//             </div>
-            
-//         )
-       
-//     }
-//     else{
-//         return(<div><a>No Checked-in participants</a></div>)
-//     }
-// }
-
 
 export default List

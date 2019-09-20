@@ -9,8 +9,14 @@ import Footer from './footer';
 
 
 const margin = {
-marginBottom : '.5rem'
+marginBottom : '.5rem',
+borderRadius: '22px !important'
 }
+const margin2 = {
+  borderRadius: '22px',
+  marginRight:'5px',
+  marginLeft:'5px'
+  }
 
 
 function Routele(props) {
@@ -35,12 +41,12 @@ function Routele(props) {
           <div className="tabs is-toggle is-centered" style={margin}>
           <ul>
             <li className="" onClick={e => {setShow(true)}}>
-              <a>      
+              <a style={margin2}>      
             <span>Scan QR Code</span>
               </a>
             </li>
             <li onClick={e => {setShow(false)}}>
-              <a>
+              <a style={margin2}>
                 <span>Participants List</span>
               </a>
             </li>
