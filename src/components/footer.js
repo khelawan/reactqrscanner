@@ -18,7 +18,7 @@ return(
     </div>
    
     <div className="column has-text-centered ">
-    <button className="button is-success is-inverted  radiusBtn" onClick={e=>{props.props.history.push("/AddParticiant")}} >Add Participant</button>
+    <button className="button is-success is-inverted islabel " onClick={e=>{props.props.history.push("/AddParticiant")}} >Add</button>
     </div>
   </div>
     </footer>
