@@ -64,7 +64,8 @@ const AddParticiant =()=>{
         {errors.organisation && 'Please enter organisation.'}
         <br></br>
         <div className="has-text-centered">
-        <button className="button is-primary is-normal radiusBtn" type="submit">  Add  </button>
+        <button className="button is-primary is-normal radiusBtn" type="submit">  Add Participant </button>
+        <a className="button is-primary is-normal radiusBtn" href="/routele"> Back</a>
         </div>
       </form>
       </div>

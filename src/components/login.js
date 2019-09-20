@@ -9,10 +9,7 @@ const style = {
     marginRight: '10px'
 }
 
-const btnwidth = {
-   
-    
-}
+
 
 const Login = (props) => {
  
@@ -62,7 +59,7 @@ const Login = (props) => {
         </div>
         <div className="field">
         <div className="has-text-centered ">
-            <button type="submit" style={btnwidth} className="button is-primary is-normal radiusBtn top3">Login</button>
+            <button type="submit"  className="button is-primary is-normal radiusBtn top3">Login</button>
          </div>
         </div>
         </form>              

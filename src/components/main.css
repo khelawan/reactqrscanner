@@ -39,6 +39,7 @@ p{
     border-radius: 20px !important;
     margin-top:10px;
     margin-bottom: 10px;
+    margin-left: 5px;
 }
 
 .bodyLogin{
@@ -75,4 +76,9 @@ color:darkslategrey;
     
     margin-top: 15px;
     margin-bottom: 15px;
+}
+
+.align-right{
+    text-align: right;
+    
 }

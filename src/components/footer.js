@@ -14,11 +14,14 @@ return(
     <footer className="footer" style={footerbg}>
     <div className="columns is-mobile">
     <div className="column is-vcentered">
-    <label className="label islabel">Total Checked-In:999</label>
+    <label className="label islabel">Checked-In:999</label>
     </div>
    
-    <div className="column has-text-centered ">
-    <button className="button is-success is-inverted islabel " onClick={e=>{props.props.history.push("/AddParticiant")}} >Add</button>
+    <div className="column align-right ">
+    <button className="button is-success is-inverted  radiusBtn" onClick={e=>{props.props.history.push("/AddParticiant")}} >Add</button>
+    <a className="button is-primary radiusBtn" href="/login">
+    <span>Logout</span>
+  </a>
     </div>
   </div>
     </footer>

@@ -8,6 +8,10 @@ import AddParticiant from './addparticipant';
 import Footer from './footer';
 
 
+const margin = {
+marginBottom : '.5rem'
+}
+
 
 function Routele(props) {
 
@@ -28,7 +32,7 @@ function Routele(props) {
           <Header/>  
           
           <div  className=" tabs is-centered  is-toggle title" ><ul className='title1'>{display_event_name}</ul></div>
-          <div className="tabs is-toggle is-centered">
+          <div className="tabs is-toggle is-centered" style={margin}>
           <ul>
             <li className="" onClick={e => {setShow(true)}}>
               <a>      
