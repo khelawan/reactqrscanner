@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 import 'bulma/css/bulma.css'
 import axios from 'axios' 
-import { get } from 'https';
+
 let _list = [];
 
 
@@ -16,6 +16,7 @@ const style = {
 }
 const bold = {
     fontSize:'18px',
+    fontWeight:'500'
 
 }
 
@@ -44,10 +45,7 @@ const List = () =>{
           console.log(error);
         })
     }
-    getData();
-
-
-           
+    getData();           
     return(
     
         <div className="list is-hoverable">

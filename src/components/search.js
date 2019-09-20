@@ -42,6 +42,7 @@ const Search = props => {
           window.alert("Invalid QR Code");
         } else {
           _searchListOn("modal");
+          window.alert("Partipant checked-in")
         }
       })
       .catch(function(error) {
@@ -124,8 +125,9 @@ const Search = props => {
                             checkInData(e.booking_id);
                           }}
                         >
-                          <p>{e.name}</p>
-                          <p>{e.email_id}</p>
+                          <p>Name: {e.name}</p>
+                          <p>Email-id: {e.email_id}</p>
+                          <p>Booking-id: {e.booking_id}</p>
                         </a>
                       );
                     })}
@@ -137,7 +139,7 @@ const Search = props => {
             })()}
           </section>
           <footer className="modal-card-foot">
-            <button className="button is-success">Check-In</button>
+            
             <button
               className="button"
               onClick={() => {
@@ -161,3 +163,4 @@ export default Search;
 
 //     )
 // }
+//<button className="button is-success">Check-In</button>
