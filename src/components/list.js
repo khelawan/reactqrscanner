@@ -30,41 +30,46 @@ const List = () =>{
     const getData = () => {
         if(!_getData)return;
         axios.get('https://xo3dnghur7.execute-api.us-east-2.amazonaws.com/dev/registration_app_get_check_in_details?event_id='+hosted_event_id)
-        .then(function (response) {   
+        .then(function (response) { 
+            setGetData(false);   
+            _list = response.data;
            pdata(response.data);
            console.log(response);
-           _list = participants;
+           
            console.log(response.data.length);
-           setGetData(false) 
+           
            localStorage.setItem('checkinLength', response.data.length);
            if(response.data == ''){
                window.alert("No participant checked-in");
            }
-           setGetData(false)        
+      
         })
         .catch(function (error) {
           setGetData(false)  
           console.log(error);
         })
     }
-    getData();  
+    getData(); 
+    
+    
     
     function downloadCsv() {
         console.log();
         axios.get('https://dstc324xgg.execute-api.us-east-2.amazonaws.com/test/participants/'+hosted_event_id)
         .then(function (response) { 
             console.log(response.data);
+            window.open(response.data);
             })
-    }
+          }
 
 
     return(
     
         <div className="list is-hoverable">
                     <div className="has-text-centered">
-                         <button className="button is-primary is-rounded" onClick={downloadCsv()} >Download CSV</button>
+                         <button className="button is-primary is-rounded" onClick={e => {downloadCsv()}} >Download CSV</button>
                     </div>
-        <input style={style}  className="input is-rounded search-box" type="text" placeholder="Start typing name to search" onChange={e => {pdata(_list.filter(v => {
+            <input style={style}  className="input is-rounded search-box" type="text" placeholder="Start typing name to search" onChange={e => {pdata(_list.filter(v => {
             return v.name.toLowerCase().indexOf(e.target.value.toLowerCase()) > -1
             }))
             }} /> 

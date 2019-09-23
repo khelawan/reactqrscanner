@@ -60,7 +60,7 @@ const Search = props => {
     localStorage.setItem("search", _search);
     axios
       .get(
-        "https://dstc324xgg.execute-api.us-east-2.amazonaws.com/test/search_participants_details/" +
+        "https://dstc324xgg.execute-api.us-east-2.amazonaws.com/test/participants/search-participants/" +
           _search
       )
       .then(function(response) {
