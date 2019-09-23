@@ -12,6 +12,7 @@ const style = {
     marginLeft:'10px',
     marginRight:'10px',
     marginBottom:'10px',
+    marginTop: '10px',
     boxShadow: '0px 0px 6px'
 }
 const bold = {

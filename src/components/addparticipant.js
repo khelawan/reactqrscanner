@@ -20,6 +20,11 @@ const hero ={
   marginBottom:'20px'
 }
 
+const containerWidth ={
+  width:'95%',
+  
+}
+
 const AddParticiant =()=>{   
     const { register, handleSubmit, errors } = useForm(); // initialise the hook
     const onSubmit = data => {
@@ -53,21 +58,23 @@ const AddParticiant =()=>{
     </div>
   </div>
 </div>
+<div className="container" style={containerWidth}>
         <form onSubmit={handleSubmit(onSubmit)}>    
-        <input className="input is-primary" name="name" placeholder='Name' ref={register({ required: true })}   style={inputStyle} />
-        {errors.name && 'Name is required.'}  
-        <input className="input is-primary" name="email_id"  placeholder='Email-id' style={inputStyle} ref={register({ required: true })}  />
+        <input className="input is-primary" name="name" placeholder='Name*' ref={register({ required: true })}   style={inputStyle} />
+        {errors.name && 'Name is required'}  
+        <input className="input is-primary" name="email_id"  placeholder='Email-id*' style={inputStyle} ref={register({ pattern: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i })}  />
         {errors.email_id && 'Email-id is required.'}
-        <input className="input is-primary" name="phone_number"  placeholder='Phone Number' style={inputStyle} ref={register({ pattern: /\d+/ })}  />
+        <input className="input is-primary" name="phone_number"  placeholder='Phone Number*' style={inputStyle} ref={register({ pattern: /\d/ })}  />
         {errors.phone_number && 'Phone number is required.'}
-        <input className="input is-primary" name="organisation" placeholder='Organisation' style={inputStyle} ref={register({ required: true })}  />
+        <input className="input is-primary" name="organisation" placeholder='Organisation*' style={inputStyle} ref={register({ required: true })}  />
         {errors.organisation && 'Please enter organisation.'}
         <br></br>
         <div className="has-text-centered">
-        <button className="button is-primary is-normal radiusBtn" type="submit">  Register </button>
-        <a className="button is-warning is-normal radiusBtn" href="/routele"> Back</a>
+        <button className="button is-primary is-normal radiusBtn" type="submit">Register</button>
+        <a className="button is-warning is-normal radiusBtn" href="/routele">&nbsp;&nbsp; Back &nbsp;&nbsp;</a>
         </div>
       </form>
+      </div>
       </div>    
     ) 
 }

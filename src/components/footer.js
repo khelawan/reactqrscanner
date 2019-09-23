@@ -32,7 +32,7 @@ return(
     <label className="label islabel">Checked-In: {localStorage.getItem('checkinLength')}</label>
     </div>
     <div className="column align-right ">
-    <button className="button is-success is-inverted  radiusBtn" onClick={e=>{props.props.history.push("/AddParticiant")}} >Add</button>
+    <button className="button is-success is-inverted  radiusBtn" onClick={e=>{props.props.history.push("/AddParticiant")}} >&nbsp;&nbsp;Add&nbsp;&nbsp;&nbsp;</button>
     <a className="button is-primary radiusBtn" onClick={clearLocalStorage} >
     <span>Logout</span>
   </a>
