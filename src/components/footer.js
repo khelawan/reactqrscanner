@@ -24,7 +24,6 @@ const Footer = (props) => {
                     console.log(response.data.length);
                     localStorage.setItem('checkinLength', response.data.length);
                     })
-
 return(
     <footer className="footer" style={footerbg}>
     <div className="columns is-mobile">
@@ -32,14 +31,11 @@ return(
     <label className="label islabel">Checked-In: {localStorage.getItem('checkinLength')}</label>
     </div>
     <div className="column align-right ">
-   
-   
     <button className="button is-success is-inverted  radiusBtn" onClick={e=>{props.props.history.push("/AddParticiant")}} >Spot Registration</button> 
     </div>
-    
     </div>
     <div className='has-text-centered'>
-    <a className="button is-primary radiusBtn" onClick={clearLocalStorage} ><span>Logout</span></a>
+    <a className="button is-primary radiusBtn widthfull" onClick={clearLocalStorage} ><span>Logout</span></a>
     </div>
     </footer>
 )

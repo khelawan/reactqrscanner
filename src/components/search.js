@@ -64,9 +64,6 @@ const Search = props => {
           _search
       )
       .then(function(response) {
-        // handle success
-        //console.log(response);
-
         if (response.data === 400) {
           window.alert("No Data Found");
         } else {
