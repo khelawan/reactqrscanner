@@ -60,9 +60,7 @@ const Search = props => {
     localStorage.setItem("search", _search);
     axios
       .get(
-        "https://dstc324xgg.execute-api.us-east-2.amazonaws.com/test/participants/search-participants/" +
-          _search
-      )
+        "https://dstc324xgg.execute-api.us-east-2.amazonaws.com/test/participants/search-participants/"+localStorage.getItem('hosted_event_id')+"/"+_search)
       .then(function(response) {
         if (response.data === 400) {
           window.alert("No Data Found");
@@ -95,12 +93,8 @@ const Search = props => {
         <button
           type="submit"
           style={searchBtn}
-          className="button is-primary is-rounded"
-        >
-          Search
-        </button>
+          className="button is-primary is-rounded">Search</button>
       </form>
-
       <div className={_searchList}>
         <div className="modal-background"></div>
         <div className="modal-card">
@@ -122,12 +116,7 @@ const Search = props => {
                     {console.log(searchData)}
                     {searchData.map(e => {
                       return (
-                        <a
-                          className="list-item"
-                          onClick={v => {
-                            checkInData(e.booking_id);
-                          }}
-                        >
+                        <a className="list-item" onClick={v => {checkInData(e.booking_id);}}>
                           <p className='is-capitalized'>Name: {e.name}</p>
                           <p>Email-id: {e.email_id}</p>
                           <p>Booking-id: {e.booking_id}</p>

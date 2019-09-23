@@ -5,6 +5,9 @@ import 'bulma/css/bulma.css'
 
 
 let _pdata = "";
+let pname = "";
+let pno = "";
+let pemail = "";
 
 //let modalClass="modal";
 
@@ -48,13 +51,29 @@ class Test extends Component {
       localStorage.setItem("scanData",scanData);
       _pdata = localStorage.getItem("scanData");
       if(_pdata.indexOf("Booking Id:")>-1){
-        //console.log(_pdata.indexOf("Booking Id"))
+        console.log(_pdata.indexOf("Booking Id"))
         _pdata = _pdata.split("Booking Id:");
         //console.log(_pdata);
         _pdata = _pdata[1];
         _pdata = _pdata.trim();
-        //console.log(_pdata);
+        console.log(_pdata);
+         
+        pname = scanData.split("Name:");
+        pname = pname[1].split("Email Id:");
+        pname = pname[0].trim();
+        console.log(pname);
+
+        pno = scanData.split("Phone Number:");
+        pno = pno[1].split("Booking Id");
+        pno = pno[0].trim();
+        console.log(pno);
+
+        pemail = scanData.split("Email Id:");
+        pemail = pemail[1].split("Phone Number");
+        pemail = pemail[0].trim();
+        console.log(pemail);
       } 
+      
       else{
         //console.log("hello")
         //console.log(_pdata);
@@ -114,7 +133,10 @@ class Test extends Component {
         <div style={modalStyle}>
         <div className="modal-content">
         <div style={styleModalContent}>
-        <p>{this.state.result}</p>
+        <p>Name: {pname}</p>
+        <p>Email Id: {pemail}</p>
+        <p>Phone : {pno}</p>
+        <p>Booking Id : {_pdata}</p>
         </div> 
         </div>
         <div className="columns">
