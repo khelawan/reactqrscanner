@@ -47,7 +47,7 @@ function Routele(props) {
             </li>
             <li onClick={e => {setShow(false)}}>
               <a style={margin2}>
-                <span>Participants List</span>
+                <span>Checked-in Details</span>
               </a>
             </li>
           </ul>

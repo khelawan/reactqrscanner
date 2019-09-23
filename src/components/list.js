@@ -29,8 +29,7 @@ const List = () =>{
     const getData = () => {
         if(!_getData)return;
         axios.get('https://xo3dnghur7.execute-api.us-east-2.amazonaws.com/dev/registration_app_get_check_in_details?event_id='+hosted_event_id)
-        .then(function (response) {
-            setGetData(false) 
+        .then(function (response) {   
            pdata(response.data);
            console.log(response);
            _list = participants;

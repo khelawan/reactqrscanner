@@ -1,6 +1,6 @@
 import React,{useState} from 'react';
 import axios from 'axios' 
-import imgkonfhub from '../components/images/512.png';
+import imgkonfhub from '../components/images/konfhub.png';
 
 
 const style = {
@@ -32,7 +32,9 @@ const Login = (props) => {
             .then(function(response){
                 console.log(response.data.hosetd_event_id);
                 if(response.data == 400){
-                    window.alert("Event Doesnot Exist");
+                    window.alert("Event Does Not Exist");
+                    localStorage.clear();
+                    props.history.push('/login');
                 }
                 else{
                     let event_details = JSON.stringify(response.data);
@@ -53,7 +55,7 @@ const Login = (props) => {
             <div>
              <div className="bodyLogin">
             <div className="has-text-centered ">
-            <img className='top' src={imgkonfhub}  height="62" width="62"/>
+            <img className='top' src={imgkonfhub}  width="200"/>
             </div>
             <form onSubmit={handleSubmit}>
             <div className="field">  
