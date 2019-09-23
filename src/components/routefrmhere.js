@@ -18,6 +18,10 @@ const margin2 = {
   marginLeft:'5px'
   }
 
+  const buttoncolor ={
+    color:'#23d160'
+  }
+
 
 function Routele(props) {
 
@@ -46,12 +50,12 @@ function Routele(props) {
             <ul>
               <li className="" onClick={e => {setShow(true)}}>
                 <a style={margin2}>      
-              <span>Scan QR Code</span>
+              <span style={buttoncolor}>Scan QR Code</span>
                 </a>
               </li>
               <li onClick={e => {setShow(false)}}>
                 <a style={margin2}>
-                  <span>Checked-in Details</span>
+                  <span style={buttoncolor}>Checked-in Details</span>
                 </a>
               </li>
             </ul>

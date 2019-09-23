@@ -82,13 +82,14 @@ const Search = props => {
   };
   return (
     <div style={divStyle2}>
+    
       <form onSubmit={handleSubmit}>
         <input
           style={style2}
           className="input is-rounded search-box"
           type="text"
           id="search"
-          placeholder="Type the Booking Id"
+          placeholder="Search by Name, Ph. no, Email"
           value={_search}
           onChange={e => {
             setSearchId(e.target.value);

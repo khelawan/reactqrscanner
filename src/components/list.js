@@ -35,6 +35,7 @@ const List = () =>{
            console.log(response);
            _list = participants;
            console.log(response.data.length);
+           setGetData(false) 
            localStorage.setItem('checkinLength', response.data.length);
            if(response.data == ''){
                window.alert("No participant checked-in");
@@ -46,10 +47,23 @@ const List = () =>{
           console.log(error);
         })
     }
-    getData();           
+    getData();  
+    
+    function downloadCsv() {
+        console.log();
+        axios.get('https://dstc324xgg.execute-api.us-east-2.amazonaws.com/test/participants/'+hosted_event_id)
+        .then(function (response) { 
+            console.log(response.data);
+            })
+    }
+
+
     return(
     
         <div className="list is-hoverable">
+                    <div className="has-text-centered">
+                         <button className="button is-primary is-rounded" onClick={downloadCsv()} >Download CSV</button>
+                    </div>
         <input style={style}  className="input is-rounded search-box" type="text" placeholder="Start typing name to search" onChange={e => {pdata(_list.filter(v => {
             return v.name.toLowerCase().indexOf(e.target.value.toLowerCase()) > -1
             }))
