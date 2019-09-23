@@ -33,42 +33,49 @@ function Routele(props) {
     let display_event_name = event_name.name;
     console.log(display_event_name);
 
-    return (
-      <div >
-          <Header/>  
-          
-          <div  className=" tabs is-centered  is-toggle title" ><ul className='title1'>{display_event_name}</ul></div>
-          <div className="tabs is-toggle is-centered" style={margin}>
-          <ul>
-            <li className="" onClick={e => {setShow(true)}}>
-              <a style={margin2}>      
-            <span>Scan QR Code</span>
-              </a>
-            </li>
-            <li onClick={e => {setShow(false)}}>
-              <a style={margin2}>
-                <span>Checked-in Details</span>
-              </a>
-            </li>
-          </ul>
+    if (localStorage.getItem('hosted_event_id') == ''){
+       window.location.href('/login');
+    }
+    else{
+      return (
+        <div >
+            <Header/>  
+            
+            <div  className=" tabs is-centered  is-toggle title" ><ul className='title1'>{display_event_name}</ul></div>
+            <div className="tabs is-toggle is-centered" style={margin}>
+            <ul>
+              <li className="" onClick={e => {setShow(true)}}>
+                <a style={margin2}>      
+              <span>Scan QR Code</span>
+                </a>
+              </li>
+              <li onClick={e => {setShow(false)}}>
+                <a style={margin2}>
+                  <span>Checked-in Details</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div>
+            {
+                (()=>{
+                    if(show){
+                      return( <div><Search/><Test/>
+                        
+                        </div>)
+                    }else{
+                      return <List/>
+                    }
+                })()
+            }
+            </div><br/>
+            <Footer props={props} />
         </div>
-        <div>
-          {
-              (()=>{
-                  if(show){
-                    return( <div><Search/><Test/>
-                      
-                      </div>)
-                  }else{
-                    return <List/>
-                  }
-              })()
-          }
-          </div><br/>
-          <Footer props={props} />
-      </div>
+      
+      );
+    }
+
     
-    );
   }
   
   export default Routele;
