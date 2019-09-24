@@ -3,16 +3,17 @@ import axios from 'axios'
 import imgkonfhub from '../components/images/konfhub.png';
 
 
+
 const style = {
     marginBottom:'10px',
     marginLeft: '10px',
-    marginRight: '10px',
-    borderRadius:'34px'
+    marginRight: '10px'
 }
 
-const style2 = {
-    borderRadius:'20px',
+const inputBorder = {
+    border:'1px solid dodgerblue'
 }
+
 
 
 const Login = (props) => {
@@ -26,7 +27,6 @@ const Login = (props) => {
     }
     else{
         const handleSubmit = e => {
-        
             localStorage.setItem('eventId', _userId);
             axios.get('https://dstc324xgg.execute-api.us-east-2.amazonaws.com/test/participants/registration-authentication/'+_userId)
             .then(function(response){
@@ -55,17 +55,19 @@ const Login = (props) => {
             <div>
              <div className="bodyLogin">
             <div className="has-text-centered ">
-            <img className='top' src={imgkonfhub}  width="200"/>
+            <div className='top'></div>
+            <img  src={imgkonfhub}  width="200"/>
             </div>
             <form onSubmit={handleSubmit}>
             <div className="field">  
-            <div style={style} className='top2'> 
-                <input className="input" style={style2} id="userId" name="userId" placeholder="Event Id" value={_userId} onChange={e => {setUserId(e.target.value)}} required />
+            <div className='top2'></div>
+            <div style={style} > 
+                <input className="input is-rounded" style={inputBorder}  id="userId" name="userId" placeholder="Enter Event Id" value={_userId} onChange={e => {setUserId(e.target.value)}} required />
              </div>
             </div>
             <div className="field">
             <div className="has-text-centered ">
-                <button type="submit"  className="button is-primary is-normal radiusBtn top3">Login</button>
+                <button type="submit"  className="button is-info is-normal is-rounded top3" style={style}>Let's Go</button>
              </div>
             </div>
             </form>              

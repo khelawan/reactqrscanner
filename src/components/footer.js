@@ -7,7 +7,7 @@ import axios from 'axios'
 
 
 const footerbg ={
-    backgroundColor:'#209cee',
+    backgroundColor:'#2F3B59',
     padding:'1rem 1.5rem 1rem'
 }
 
@@ -16,9 +16,7 @@ const clearLocalStorage = () =>{
   window.location = '/login'
 }
 const hosted_event_id = localStorage.getItem("hosted_event_id");
-const Footer = (props) => {
-
-                    
+const Footer = (props) => { 
                     axios.get('https://xo3dnghur7.execute-api.us-east-2.amazonaws.com/dev/registration_app_get_check_in_details?event_id='+hosted_event_id)
                     .then(function (response) {
                     console.log(response.data.length);
@@ -31,11 +29,11 @@ return(
     <label className="label islabel">Checked-In: {localStorage.getItem('checkinLength')}</label>
     </div>
     <div className="column align-right ">
-    <button className="button is-success is-inverted  radiusBtn" onClick={e=>{props.props.history.push("/AddParticiant")}} >Spot Registration</button> 
+    <button className="button is-info is-inverted  radiusBtn" onClick={e=>{props.props.history.push("/AddParticiant")}} >Spot Registration</button> 
     </div>
     </div>
     <div className='has-text-centered'>
-    <a className="button is-primary radiusBtn widthfull" onClick={clearLocalStorage} ><span>Logout</span></a>
+    <a className="button is-info radiusBtn widthfull" onClick={clearLocalStorage} ><span>Change Event</span></a>
     </div>
     </footer>
 )

@@ -49,7 +49,7 @@ const AddParticiant =()=>{
     return(
         <div >
         <Header/>
-<div className="hero is-primary radius" style={hero}>
+<div className="hero  radius" style={hero}>
   <div className="" style={heroStyle}>
     <div className="container has-text-centered">
       <h2 className="subtitle">
@@ -60,18 +60,18 @@ const AddParticiant =()=>{
 </div>
 <div className="container" style={containerWidth}>
         <form onSubmit={handleSubmit(onSubmit)}>    
-        <input className="input is-primary" name="name" placeholder='Name*' ref={register({ required: true })}   style={inputStyle} />
-        {errors.name && 'Name is required'}  
-        <input className="input is-primary" name="email_id"  placeholder='Email-id*' style={inputStyle} ref={register({ pattern: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i })}  />
-        {errors.email_id && 'Email-id is required.'}
-        <input className="input is-primary" name="phone_number"  placeholder='Phone Number*' style={inputStyle} ref={register({ pattern: /\d/ })}  />
-        {errors.phone_number && 'Phone number is required.'}
-        <input className="input is-primary" name="organisation" placeholder='Organisation*' style={inputStyle} ref={register({ required: true })}  />
-        {errors.organisation && 'Please enter organisation.'}
-        <br></br>
+        <input className="input is-info" name="name" placeholder='Name*' ref={register({ required: true })}   style={inputStyle} />
+        {errors.name && 'Please enter name'}  
+        <input className="input is-info" name="email_id"  placeholder='Email-id*' style={inputStyle} ref={register({ pattern: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i })}  />
+        {errors.email_id && 'Please enter email-id'}
+        <input className="input is-info" name="phone_number"  placeholder='Phone Number*' style={inputStyle} ref={register({ pattern: /\d/ })}  />
+        {errors.phone_number && 'Please enter phone number'}
+        <input className="input is-info" name="organisation" placeholder='Organisation*' style={inputStyle} ref={register({ required: true })}  />
+        {errors.organisation && 'Please enter organisation'}
+        <br></br><br/>
         <div className="has-text-centered">
-        <button className="button is-primary is-normal radiusBtn" type="submit">Register</button>
-        <a className="button is-warning is-normal radiusBtn" href="/routele">&nbsp;&nbsp; Back &nbsp;&nbsp;</a>
+        <button className="button is-info is-normal is-rounded" type="submit">Register</button>
+        <a className="button  radiusBtn" href="/routele">&nbsp;&nbsp; Back &nbsp;&nbsp;</a>
         </div>
       </form>
       </div>

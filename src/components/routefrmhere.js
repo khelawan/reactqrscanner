@@ -19,7 +19,7 @@ const margin2 = {
   }
 
   const buttoncolor ={
-    color:'#23d160'
+    color:'dodgerblue'
   }
 
 
@@ -31,11 +31,7 @@ function Routele(props) {
     //console.log(props);
 
     const [show, setShow] = useState(true);
-    let event_name = localStorage.getItem("event_details");
-    event_name = JSON.parse(event_name);
-    //console.log(JSON.parse(event_name));
-    let display_event_name = event_name.name;
-    console.log(display_event_name);
+    
 
     if (localStorage.getItem('hosted_event_id') == ''){
        window.location.href('/login');
@@ -45,7 +41,7 @@ function Routele(props) {
         <div >
             <Header/>  
             
-            <div  className=" tabs is-centered  is-toggle title" ><ul className='title1'>{display_event_name}</ul></div>
+           
             <div className="tabs is-toggle is-centered" style={margin}>
             <ul>
               <li className="" onClick={e => {setShow(true)}}>

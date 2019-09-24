@@ -50,9 +50,6 @@ const List = () =>{
         })
     }
     getData(); 
-    
-    
-    
     function downloadCsv() {
         console.log();
         axios.get('https://dstc324xgg.execute-api.us-east-2.amazonaws.com/test/participants/'+hosted_event_id)
@@ -61,13 +58,10 @@ const List = () =>{
             window.open(response.data);
             })
           }
-
-
     return(
-    
-        <div className="list is-hoverable">
+        <div className=" is-hoverable">
                     <div className="has-text-centered">
-                         <button className="button is-primary is-rounded" onClick={e => {downloadCsv()}} >Download CSV</button>
+                         <button className="button is-info is-rounded" onClick={e => {downloadCsv()}} >Download CSV</button>
                     </div>
             <input style={style}  className="input is-rounded search-box" type="text" placeholder="Start typing name to search" onChange={e => {pdata(_list.filter(v => {
             return v.name.toLowerCase().indexOf(e.target.value.toLowerCase()) > -1

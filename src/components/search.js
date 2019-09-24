@@ -5,8 +5,7 @@ import axios from "axios";
 const style2 = {
   width: "70%",
   marginLeft: "10px",
-  marginRight: "10px",
-  boxShadow: "0px 0px 6px"
+  boxShadow: "0px 0px 3px"
 };
 const divStyle2 = {
   marginTop: "10px",
@@ -14,6 +13,8 @@ const divStyle2 = {
 };
 const searchBtn = {
   // width:'100px'
+  float:'right',
+  marginRight:'10px'
 };
 
 const styleModal = {
@@ -93,7 +94,7 @@ const Search = props => {
         <button
           type="submit"
           style={searchBtn}
-          className="button is-primary is-rounded">Search</button>
+          className="button is-info is-rounded">Search</button>
       </form>
       <div className={_searchList}>
         <div className="modal-background"></div>
