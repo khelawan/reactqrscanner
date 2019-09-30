@@ -117,11 +117,19 @@ const Search = props => {
                     {console.log(searchData)}
                     {searchData.map(e => {
                       return (
-                        <a className="list-item" onClick={v => {checkInData(e.booking_id);}}>
-                          <p className='is-capitalized'>Name: {e.name}</p>
+                        <div>
+                        <a className="list-item" >
+                          <p className='is-capitalized'>Name:{e.name}</p>
                           <p>Email-id: {e.email_id}</p>
                           <p>Booking-id: {e.booking_id}</p>
+                        
+                        <div className="is-pulled-right">
+                        <button className="button is-success" onClick={v => {checkInData(e.booking_id);}}>CheckIn</button>
+                        </div>
+                        <hr></hr>
                         </a>
+                        
+                        </div>
                       );
                     })}
                   </div>

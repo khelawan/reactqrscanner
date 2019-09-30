@@ -27,7 +27,8 @@ const Login = (props) => {
     }
     else{
         const handleSubmit = e => {
-            localStorage.setItem('eventId', _userId);
+            
+            localStorage.setItem('eventId', _userId.toLowerCase());
             axios.get('https://dstc324xgg.execute-api.us-east-2.amazonaws.com/test/participants/registration-authentication/'+_userId)
             .then(function(response){
                 console.log(response.data.hosetd_event_id);
