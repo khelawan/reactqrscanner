@@ -195,7 +195,7 @@ class Test extends Component {
         <div className="modal-background"></div>
         <div className="modal-content">
             <header className="modal-card-head">
-            <p className="modal-card-title">Warning</p>
+            <p className="modal-card-title"></p>
           </header>
           <section className="modal-card-body has-text-centered" style={styleModal}>
            <h3>{this.state.errormsg}</h3><br>
