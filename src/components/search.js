@@ -28,6 +28,10 @@ const Search = props => {
 
   const [_searchList, _searchListOn] = useState("modal");
 
+  const [_invalidModal, _invalidModalActive] = useState("modal");
+
+  const [_noPF, _errormsg]  = useState(" ");
+
   const checkInData = bookingId => {
     console.log(bookingId);
     axios
@@ -41,14 +45,18 @@ const Search = props => {
       .then(function(response) {
         console.log(response);
         if (response.data == 400) {
-          window.alert("Invalid QR Code");
+          _invalidModalActive("modal is-active");
+          _errormsg("Participant Couldnot be Checked-In");
+          
         } 
         else if(response.data == 409){
-           window.alert("Participant already checked-in")
+          _invalidModalActive("modal is-active");
+          _errormsg("Participant Already Checked-In");
         }
         else {
           _searchListOn("modal");
-          window.alert("Partipant checked-in")
+          _invalidModalActive("modal is-active");
+          _errormsg("Participant Checked-In");
         }
       })
       .catch(function(error) {
@@ -64,14 +72,16 @@ const Search = props => {
         "https://dstc324xgg.execute-api.us-east-2.amazonaws.com/test/participants/search-participants/"+localStorage.getItem('hosted_event_id')+"/"+_search)
       .then(function(response) {
         if (response.data === 400) {
-          window.alert("No Data Found");
+          _invalidModalActive("modal is-active");
+          _errormsg("No Participant Found");
+          
         } else {
           setSearchData(response.data);
           _searchListOn("modal is-active");
         }
       })
       .catch(function(error) {
-        // handle error
+       
         console.log(error);
       });
     e.preventDefault();
@@ -101,13 +111,7 @@ const Search = props => {
         <div className="modal-card">
           <header className="modal-card-head">
             <p className="modal-card-title">List of Participants</p>
-            <button
-              className="delete"
-              aria-label="close"
-              onClick={() => {
-                _searchListOn("modal");
-              }}
-            ></button>
+           
           </header>
           <section className="modal-card-body" style={styleModal}>
             {(() => {
@@ -124,7 +128,7 @@ const Search = props => {
                           <p>Booking-id: {e.booking_id}</p>
                         
                         <div className="is-pulled-right">
-                        <button className="button is-success" onClick={v => {checkInData(e.booking_id);}}>CheckIn</button>
+                        <button className="button is-info is-rounded" onClick={v => {checkInData(e.booking_id);}}>CheckIn</button>
                         </div>
                         <hr></hr>
                         </a>
@@ -152,16 +156,22 @@ const Search = props => {
           </footer>
         </div>
       </div>
+      
+      <div className={_invalidModal}>
+      <div className="modal-background"></div>
+      <div className="modal-content">
+          <header class="modal-card-head">
+          <p class="modal-card-title">Warning</p>
+        </header>
+        <section class="modal-card-body has-text-centered" style={styleModal}>
+         <h3>{_noPF}</h3><br>
+         </br>
+         <button class="button is-info is-rounded" onClick={() => {_invalidModalActive("modal");}}>OK</button>
+        </section>
+      </div>
+    </div>
     </div>
   );
 };
 
 export default Search;
-
-// {
-//     searchData.map((e)=>
-//        <p>e.names</p>
-
-//     )
-// }
-//<button className="button is-success">Check-In</button>

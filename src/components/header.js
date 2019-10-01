@@ -2,9 +2,8 @@ import React from 'react';
 //import ReactDOM from 'react-dom';
 import 'bulma/css/bulma.css'
 
-
-const imgStyle = {
-    maxHeight: '16.75rem'
+const headerStyle = {
+  backgroundColor:'rgb(47, 59, 89)'
 }
 
 const Header = () => {
@@ -15,25 +14,12 @@ const Header = () => {
     console.log(display_event_name);
     return(
         <div>
-                    <nav className="navbar is-info" role="navigation" aria-label="main navigation">
+                    <nav className="navbar is-info" style={headerStyle} role="navigation" aria-label="main navigation">
                     <div className="navbar-brand">
                         <a className="navbar-item" href="/routele">
-                      
-
                         </a> 
-                        <div  className=" tabs title" ><ul className='title1 has-text-centered'>{display_event_name}</ul></div>
-                        <div className="">
-                        <div className="navbar-end">
-                        <div className="navbar-item ">
-                          <div className="field is-grouped navbar-end">
-                           
-                            <p className="control ">
-                             
-                            </p>
-                          </div>
-                        </div>
-                        </div>
-                        </div>
+                        <div  className="tabs title" ><ul className='title1'>{display_event_name}</ul></div>
+                    
                     </div>
                    </nav>        
         </div>

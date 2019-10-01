@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component }  from 'react'
 import QrReader from 'react-qr-reader'
 import axios from 'axios' 
 import 'bulma/css/bulma.css'
@@ -10,6 +10,10 @@ let pno = "";
 let pemail = "";
 
 //let modalClass="modal";
+const styleModal = {
+  margin: "0px",
+  backgroundColor: "white"
+};
 
 const modalStyle = {
     backgroundColor: 'white',
@@ -24,7 +28,6 @@ const styleModalContent = {
   marginTop: '30px'  
 
 }
-
 class Test extends Component {
     
   constructor(props){
@@ -32,11 +35,22 @@ class Test extends Component {
     this.state = {
         modalClass:"modal "
     }
+   
   }
+
+
+ changetext(){
+  this.setState({
+       alertmodal:"modal is-active"
+  })
+}
 
   componentWillMount(){
     //console.log(this)
   }
+ 
+
+     
   handleScan = data => {
     if (data) {
       this.setState({
@@ -98,8 +112,13 @@ class Test extends Component {
             modalClass : "modal"
           })
           window.alert("Invalid QR Code")
+
+        }
+        else if(response.data == 404){
+          window.alert("participant not available");
         }
         else if (response.data == 409){
+           // this.changetext();
           window.alert("Participant already checked-in")
         }
         else{
@@ -147,6 +166,22 @@ class Test extends Component {
        </div>
        <button className="modal-close is-large" aria-label="close" onClick={() => this.onClickClose()}></button>
       </div>  
+
+     
+      <div className='modal'>
+      <div className="modal-background"></div>
+      <div className="modal-content">
+          <header class="modal-card-head">
+          <p class="modal-card-title">Warning</p>
+        </header>
+        <section class="modal-card-body has-text-centered" style={styleModal}>
+         <h3>Error Msg</h3><br>
+         </br>
+         <button class="button is-info is-rounded" >OK</button>
+        </section>
+       </div>
+       </div>
+
       </div>
     )
   } 
