@@ -160,13 +160,13 @@ const Search = props => {
       <div className={_invalidModal}>
       <div className="modal-background"></div>
       <div className="modal-content">
-          <header class="modal-card-head">
-          <p class="modal-card-title">Warning</p>
+          <header className="modal-card-head">
+          <p className="modal-card-title">Warning</p>
         </header>
-        <section class="modal-card-body has-text-centered" style={styleModal}>
+        <section className="modal-card-body has-text-centered" style={styleModal}>
          <h3>{_noPF}</h3><br>
          </br>
-         <button class="button is-info is-rounded" onClick={() => {_invalidModalActive("modal");}}>OK</button>
+         <button className="button is-info is-rounded" onClick={() => {_invalidModalActive("modal");}}>OK</button>
         </section>
       </div>
     </div>

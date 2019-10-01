@@ -33,17 +33,19 @@ class Test extends Component {
   constructor(props){
       super(props)
     this.state = {
-        modalClass:"modal "
+        modalClass:"modal ",
+        alertmodal:"modal",
+        errormsg:""
     }
    
   }
 
 
- changetext(){
-  this.setState({
-       alertmodal:"modal is-active"
-  })
-}
+//  changetext(){
+//   this.setState ({
+       
+//   })
+// }
 
   componentWillMount(){
     //console.log(this)
@@ -111,22 +113,40 @@ class Test extends Component {
           that.setState({
             modalClass : "modal"
           })
-          window.alert("Invalid QR Code")
+         
+          that.setState({
+            alertmodal:"modal is-active",
+            errormsg:"Invalid QR Code"
+
+          })
 
         }
         else if(response.data == 404){
-          window.alert("participant not available");
+          that.setState({
+            alertmodal:"modal is-active",
+            errormsg:"Participant Not Available"
+
+          })
+          
         }
         else if (response.data == 409){
            // this.changetext();
-          window.alert("Participant already checked-in")
+          //window.alert("Participant already checked-in")
+          that.setState({
+            alertmodal:"modal is-active",
+            errormsg:"Participant already checked-in"
+
+          })
         }
         else{
           console.log(response);
-          window.alert("Particiapnt Checked-in")
           that.setState({
-            modalClass : "modal"
-          })
+            modalClass : "modal",
+            alertmodal:"modal is-active",
+            errormsg:"Particiapnt Checked-in"
+
+          }) 
+         
          // console.log(that.state)
 
         }      
@@ -139,6 +159,7 @@ class Test extends Component {
 
   render() {
     return (
+      <div>
       <div className='scan'>
         <QrReader
           delay={300}
@@ -147,6 +168,7 @@ class Test extends Component {
           style={{ width: '100%' }}
         />
         
+
         <div className={this.state.modalClass}>
         <div className="modal-background"></div>
         <div style={modalStyle}>
@@ -167,22 +189,31 @@ class Test extends Component {
        <button className="modal-close is-large" aria-label="close" onClick={() => this.onClickClose()}></button>
       </div>  
 
+
+
+      <div className={this.state.alertmodal}  >
+        <div className="modal-background"></div>
+        <div className="modal-content">
+            <header className="modal-card-head">
+            <p className="modal-card-title">Warning</p>
+          </header>
+          <section className="modal-card-body has-text-centered" style={styleModal}>
+           <h3>{this.state.errormsg}</h3><br>
+           </br>
+           <button className="button is-info is-rounded" onClick={() => this.onClickCloseAlert()} >OK</button>
+          </section>
+         </div>
+         </div>
+
      
-      <div className='modal'>
-      <div className="modal-background"></div>
-      <div className="modal-content">
-          <header class="modal-card-head">
-          <p class="modal-card-title">Warning</p>
-        </header>
-        <section class="modal-card-body has-text-centered" style={styleModal}>
-         <h3>Error Msg</h3><br>
-         </br>
-         <button class="button is-info is-rounded" >OK</button>
-        </section>
-       </div>
-       </div>
+     
 
       </div>
+
+      
+
+
+       </div>
     )
   } 
 
@@ -193,6 +224,16 @@ class Test extends Component {
    })
    console.log(that.state)
   }
+
+
+  onClickCloseAlert(){
+    const that = this;
+    that.setState({
+      alertmodal : "modal"
+     })
+     console.log(that.state)
+    }
+
 }
 //<a className="button is-link is-rounded">List</a>
 
