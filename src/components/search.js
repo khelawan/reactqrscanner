@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import axios from "axios";
 
 const style2 = {
-  width: "70%",
+  
   marginLeft: "10px",
   boxShadow: "0px 0px 3px"
 };
@@ -90,6 +90,7 @@ const Search = props => {
     <div style={divStyle2}>
     
       <form onSubmit={handleSubmit}>
+      <div className="field has-addons">
         <input
           style={style2}
           className="input is-rounded search-box"
@@ -105,6 +106,7 @@ const Search = props => {
           type="submit"
           style={searchBtn}
           className="button is-info is-rounded">Search</button>
+          </div>
       </form>
       <div className={_searchList}>
         <div className="modal-background"></div>

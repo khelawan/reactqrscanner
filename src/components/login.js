@@ -16,6 +16,7 @@ const inputBorder = {
 
 
 
+
 const Login = (props) => {
      
     const [_userId, setUserId] = useState("");
@@ -53,8 +54,9 @@ const Login = (props) => {
         }
       
         return (
-            <div>
+            <div >
              <div className="bodyLogin">
+             
             <div className="has-text-centered ">
             <div className='top'></div>
             <img  src={imgkonfhub}  width="200"/>
@@ -70,9 +72,12 @@ const Login = (props) => {
             <div className="has-text-centered ">
                 <button type="submit"  className="button is-info is-normal is-rounded top3" style={style}>Let's Go</button>
              </div>
+             
             </div>
             </form>              
             </div>
+            <div className='top2'></div>
+             
             </div>
         );
     }   

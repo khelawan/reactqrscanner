@@ -6,6 +6,7 @@ import Search from './search';
 import List from './list';
 import AddParticiant from './addparticipant';
 import Footer from './footer';
+import "../components/main.css";
 
 
 const margin = {
