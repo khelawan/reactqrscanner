@@ -1,4 +1,8 @@
 import React, {useState} from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCoffee } from '@fortawesome/free-solid-svg-icons'
+
+
 
 import Test from './qr';
 import Header from './header';
@@ -24,6 +28,8 @@ const margin2 = {
   }
 
 
+const element = <FontAwesomeIcon icon={faCoffee} />
+
 function Routele(props) {
 
     //  if(localStorage.getItem("eventId") != null || localStorage.getItem("eventId") != undefined || localStorage.getItem("eventId") != "") {
@@ -40,23 +46,9 @@ function Routele(props) {
     else{
       return (
         <div >
-            <Header/>  
             
+        <Header/>  
            
-            <div className="tabs is-toggle is-centered" style={margin}>
-            <ul>
-              <li className="" onClick={e => {setShow(true)}}>
-                <a style={margin2}>      
-              <span style={buttoncolor}>Scan QR Code</span>
-                </a>
-              </li>
-              <li onClick={e => {setShow(false)}}>
-                <a style={margin2}>
-                  <span style={buttoncolor}>Checked-in Details</span>
-                </a>
-              </li>
-            </ul>
-          </div>
           <div>
             {
                 (()=>{
@@ -69,7 +61,26 @@ function Routele(props) {
                     }
                 })()
             }
-            </div><br/>
+            </div>
+            
+            <div className="tabs is-toggle is-centered " style={margin}>
+            <ul>
+              <li className="" onClick={e => {setShow(true)}}>
+                <a style={margin2}>      
+              <span style={buttoncolor}><FontAwesomeIcon icon={faCoffee} /></span>
+                </a>
+              </li>
+              <li onClick={e => {setShow(false)}}>
+                <a style={margin2}>
+                  <span style={buttoncolor}>Checked-in Details</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+           
+            
+            
+
             <Footer props={props} />
         </div>
       
@@ -80,3 +91,5 @@ function Routele(props) {
   }
   
   export default Routele;
+
+ // 

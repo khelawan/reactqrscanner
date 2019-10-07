@@ -7,7 +7,7 @@ import axios from 'axios'
 
 
 const footerbg ={
-    backgroundColor:'#2F3B59',
+    backgroundColor:'black',
     padding:'1rem 1.5rem 1rem'
 }
 
